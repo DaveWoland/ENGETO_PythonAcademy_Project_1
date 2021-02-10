@@ -59,8 +59,7 @@ if registered_users.get(user) == password:
     #Výpočet všech hodnot
     text_split = TEXTS[selected_text].split()
     clean_text = []
-    for prvek in text_split:
-        clean_text.append(prvek.strip(".,?!'"))
+    clean_text = [prvek.strip(".,?!'") for prvek in text_split]
 
     word_count = len(clean_text)
 
@@ -101,7 +100,7 @@ if registered_users.get(user) == password:
         else:
             word_lenght[len(prvek)] += 1
 
-    print("LEN|  OCCURENCES    |NR.")
+    print("LEN|  OCCURENCES  |NR.")
     print(line)
     for i, prvek in enumerate(word_lenght):
         if not i or not prvek:
